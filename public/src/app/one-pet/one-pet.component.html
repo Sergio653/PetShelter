@@ -1,0 +1,15 @@
+<h3>Details about {{pet.name}}</h3>
+<a [routerLink]="['/pets']">Home</a>
+
+<p>Pet type: {{pet.type}} </p>
+<p>Pet Description: {{pet.desc}} </p>
+<p>Skills: {{pet.one}}, {{pet.two}}, {{pet.three}} </p>
+<p>Likes: {{pet.likes}} </p>
+
+<form (submit)="like(pet._id)"> 
+    <input type="hidden" name="likes" [(ngModel)]="pet.likes" >
+    <input type="submit" value="Like this Pet!">
+</form>
+<form (submit)="onDelete(pet._id)">
+    <input type="submit" value="Adopt this pet!">
+</form>

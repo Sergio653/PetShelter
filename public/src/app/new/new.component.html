@@ -1,0 +1,18 @@
+<h3>Know of a pet needing a home?</h3>
+
+<div *ngIf="showErrors">
+    <p *ngFor="let e of errors"> {{e}}</p>
+</div>
+
+
+<form (submit)="onSubmit()" class="form-group col-lg-6">
+    <p>Pet name: <input class="form-control" type="text" name="name" [(ngModel)]="newPet.name"></p>
+    <p>Pet type: <input class="form-control" type="text" name="type" [(ngModel)]="newPet.type" ></p>
+    <p>Pet Description: <input class="form-control" type="text" name="desc" [(ngModel)]="newPet.desc"></p>
+    <p>Skills:</p>
+    <p>Skills 1: <input class="form-control" type="text" name="one" [(ngModel)]="newPet.one"></p>
+    <p>Skills 2: <input class="form-control" type="text" name="two" [(ngModel)]="newPet.two" ></p>
+    <p>Skills 3: <input class="form-control" type="text" name="three" [(ngModel)]="newPet.three" ></p>
+    <input class="form-control" type="submit" value="Add Pet">
+    <button class="form-control" [routerLink]="['/pets']">Cancel</button>
+</form>

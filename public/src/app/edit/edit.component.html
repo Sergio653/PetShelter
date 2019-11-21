@@ -1,0 +1,17 @@
+<h3>Edit</h3>
+
+<div *ngIf="showErrors">
+        <p *ngFor="let e of errors"> {{e}}</p>
+    </div>
+
+<form (submit)="onUpdate(pet._id)" class="form-group col-lg-6">
+    <p>Pet name: <input class="form-control" type="text" name="name" [(ngModel)]="pet.name"></p>
+    <p>Pet type: <input class="form-control" type="text" name="type" [(ngModel)]="pet.type" ></p>
+    <p>Pet Description: <input class="form-control" type="text" name="desc" [(ngModel)]="pet.desc"></p>
+    <p>Skills:</p>
+    <p>Skills 1: <input class="form-control" type="text" name="one" [(ngModel)]="pet.one"></p>
+    <p>Skills 2: <input class="form-control" type="text" name="two" [(ngModel)]="pet.two" ></p>
+    <p>Skills 3: <input class="form-control" type="text" name="three" [(ngModel)]="pet.three" ></p>
+    <input class="form-control" type="submit" value="Edit Pet">
+    <button class="form-control" [routerLink]="['/pets']">Cancel</button>
+</form>
